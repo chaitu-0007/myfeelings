@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Message</title>
+    <style>
+        body {
+            background-color: #FFB6C1; /* Light pink */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+        .final-note {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: float 2s ease-out forwards;
+            pointer-events: none;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+        @media (max-width: 600px) {
+            .final-note {
+                padding: 20px;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="final-note">
+        <h1>I have this feeling like im doing to much these days </h1>
+        <p>i dont know what you think about me but , but i feel like am i being to much for her , am i making her life complicated ani , nuvvvu em naa girlfriend vi kadhu but nenu neeku addict aiyypoya , andhukey intha la pichi ekki pothuna , like nuvu oka 2 days edho la matladithey naku ehdi ehdo aiyypothundi , idhi anth aneeku pressure ani bhayam kuda naku naku nuvvu antey chala istam pichi prema eh edhi edho vaguthunna</p>
+        <p>NUVVU LEKA POTHEY MY LIFE IS LIKE SO EMPTY</p>
+        <P>BUT ONE THING NENU NEE DEGGAARA NUNCHI EM EXPECT CHEYYANU EXPECT PRIORITY</P>
+        <button id="instagram-btn">I AM SORRY NENU NINNU INTHA LA PRESSURE CHEYSTUNAA MAY BE IDHI CHADIVEY NUVVU PAKKA NANNU HATE CHEYSTAV EMO</button>
+    </div>
+    <script>
+        // Fade in on load
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+
+        // Instagram button with heart animation
+        document.getElementById('instagram-btn').addEventListener('click', () => {
+            // Create floating heart
+            const heart = document.createElement('div');
+            heart.textContent = '❤️';
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 80 + '%'; // Random horizontal position
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 2000); // Remove after animation
+
+            // Open Instagram (replace with your profile URL)
+            window.open('https://www.instagram.com/', '_blank');
+        });
+    </script>
+</body>
+</html>
